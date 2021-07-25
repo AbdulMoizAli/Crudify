@@ -1,0 +1,39 @@
+﻿using @App@.Areas.@Area@.Models;
+using Microsoft.AspNetCore.Mvc;
+using System.Collections.Generic;
+
+namespace @App@.Areas.@Area@.@ApiController@
+{
+    [Route("api/[controller]/[action]")]
+    [ApiController]
+    public class @Model@Controller : Controller
+    {
+        public List<@Model@> @Model@GetAll(BValues bv, string ip, string cInfo)
+        {
+            return new @Model@().@Area@_@Model@GetAll(bv, ip, cInfo);
+        }
+
+        public @Model@ @Model@GetById(int id, BValues bv, string ip, string cInfo)
+        {
+            return new @Model@().@Area@_@Model@GetById(id, bv, ip, cInfo);
+        }
+
+        [HttpPost]
+        public string @Model@Save(List<object> objList, string ip, string cInfo)
+        {
+            return ((@Model@)objList[0]).@Area@_@Model@Save((BValues)objList[1], ip, cInfo);
+        }
+
+        [HttpPost]
+        public string @Model@Update(List<object> objList, string ip, string cInfo)
+        {
+            return ((@Model@)objList[0]).@Area@_@Model@Update((BValues)objList[1], ip, cInfo);
+        }
+
+        [HttpPost]
+        public string @Model@Delete(int id, BValues bv, string ip, string cInfo)
+        {
+            return new @Model@().@Area@_@Model@Delete(id, bv, ip, cInfo);
+        }
+    }
+}

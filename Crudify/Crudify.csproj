@@ -1,0 +1,35 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>netcoreapp2.1</TargetFramework>
+    <Company>Axon Solution</Company>
+    <Authors>Abdul Moiz</Authors>
+    <Copyright>Copyright (C) 2021 Axon Solution</Copyright>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <Description>This package/.NET tool generates Model, ApiController and Controller for a particular entity.</Description>
+    <PackageIcon>Data-Files.png</PackageIcon>
+    <PackageIconUrl />
+    <PackAsTool>true</PackAsTool>
+    <ToolCommandName>crud</ToolCommandName>
+    <PackageOutputPath>./nupkg</PackageOutputPath>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Include="Assets\Data-Files.png">
+      <Pack>True</Pack>
+      <PackagePath></PackagePath>
+    </None>
+    <None Include="Templates\*">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <PackageReference Include="Colorful.Console" Version="1.2.15" />
+    <PackageReference Include="CommandLineParser" Version="2.8.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Assets\" />
+    <Folder Include="nupkg\" />
+  </ItemGroup>
+
+</Project>

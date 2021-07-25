@@ -1,0 +1,40 @@
+﻿using @App@.Areas.@Area@.Models;
+using Microsoft.AspNetCore.Mvc;
+using System.Collections.Generic;
+using @Model@ApiController = @App@.Areas.@Area@.@ApiController@.@Model@Controller;
+
+namespace @App@.Areas.@Area@.Controllers
+{
+    [Area("@Area@")]
+    public class @Model@Controller : Controller
+    {
+        public IActionResult Index()
+        {
+            return View(new @Model@ApiController().@Model@GetAll(HttpContext.Session.GetBValues(), HttpContext.GetIP(), HttpContext.GetCInfo()));
+        }
+
+        // create/edit view for @Model@
+        public IActionResult A@Model@(int id = 0)
+        {
+            return View(new @Model@ApiController().@Model@GetById(id, HttpContext.Session.GetBValues(), HttpContext.GetIP(), HttpContext.GetCInfo()));
+        }
+
+        [HttpPost]
+        public string Save@Model@(@Model@ model)
+        {
+            return new @Model@ApiController().@Model@Save(new List<object>() { model, HttpContext.Session.GetBValues() }, HttpContext.GetIP(), HttpContext.GetCInfo());
+        }
+
+        [HttpPost]
+        public string Update@Model@(@Model@ model)
+        {
+            return new @Model@ApiController().@Model@Update(new List<object>() { model, HttpContext.Session.GetBValues() }, HttpContext.GetIP(), HttpContext.GetCInfo());
+        }
+
+        [HttpPost]
+        public string Delete@Model@(int id)
+        {
+            return new @Model@ApiController().@Model@Delete(id, HttpContext.Session.GetBValues(), HttpContext.GetIP(), HttpContext.GetCInfo());
+        }
+    }
+}
